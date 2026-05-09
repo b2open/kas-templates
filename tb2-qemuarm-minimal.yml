@@ -1,0 +1,36 @@
+header:
+  version: 14
+
+repos:
+  poky:
+    url: https://git.yoctoproject.org/poky
+    branch: scarthgap
+    layers:
+      meta:
+      meta-poky:
+      meta-yocto-bsp:
+
+# Define MACHINE, DISTRO and target image
+machine: qemuarm
+distro: poky
+target:
+  - core-image-minimal
+
+# Extra Configurations
+local_conf_header:
+  default: |
+    CONF_VERSION = "2"
+
+    # add rpm package management
+    PACKAGE_CLASSES = "package_rpm"
+
+    # wid support    
+    IMAGE_FSTYPES = "wic"
+
+    # Limit Build
+    PARALLEL_MAKE = "-j 8"
+    BB_NUMBER_THREADS = "8"
+
+    # Allows QEMU to run without hardware acceleration
+    QB_SYSTEM_NAME = "qemu-system-arm"
+

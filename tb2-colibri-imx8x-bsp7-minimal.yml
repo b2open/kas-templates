@@ -1,0 +1,28 @@
+# =============================================================================
+# kas project configuration
+# Target  : Toradex Colibri iMX8QXP (colibri-imx8x)
+# BSP     : 7.5.0 (Yocto Project 5.0 - Scarthgap)
+# Image   : tdx-reference-minimal-image
+# Manifest: git://git.toradex.com/toradex-manifest.git -b refs/tags/7.5.0
+#           -m tdxref/default.xml
+# =============================================================================
+
+# Build de producao - tdx-reference-minimal-image
+header:
+  version: 14
+  includes:
+    - fragments/bsp-7.5.0.yml
+
+machine: colibri-imx8x
+distro: tdx-xwayland
+target:
+  - tdx-reference-minimal-image
+
+repos:
+  # Layer de customizacao local
+  meta-b2open-treinamento:
+    url: https://github.com/b2open/meta-b2open-treinamento.git
+    branch: scarthgap
+    path: layers/meta-b2open-treinamento
+
+

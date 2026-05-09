@@ -1,0 +1,14 @@
+header:
+  version: 14
+
+local_conf_header:
+  debug-tools: |
+    # Habilita simbolos de debug nos pacotes
+    DEBUG_BUILD = "1"
+    EXTRA_IMAGE_FEATURES += "debug-tweaks tools-debug tools-sdk"
+
+    # GDB e strace na imagem
+    IMAGE_INSTALL:append = " gdb gdbserver strace"
+
+    # Logs de build mais verbosos
+    BB_VERBOSE_LOGS = "1"

@@ -1,0 +1,181 @@
+header:
+  version: 14
+
+repos:
+
+  # ---------------------------------------------------------------------------
+  # OE-Core (Poky / openembedded-core)
+  # ---------------------------------------------------------------------------
+  openembedded-core:
+    url: https://github.com/openembedded/openembedded-core.git
+    refspec: 6988157ad983978ffd6b12bcefedd4deaffdbbd1
+    path: layers/openembedded-core
+    layers:
+      meta:
+
+  # ---------------------------------------------------------------------------
+  # BitBake
+  # ---------------------------------------------------------------------------
+  bitbake:
+    url: https://github.com/openembedded/bitbake.git
+    refspec: 8dcf084522b9c66a6639b5f117f554fde9b6b45a
+    path: layers/openembedded-core/bitbake
+    layers: {}
+
+  # ---------------------------------------------------------------------------
+  # meta-yocto
+  # ---------------------------------------------------------------------------
+  meta-yocto:
+    url: https://git.yoctoproject.org/meta-yocto
+    refspec: bf6aea52c4009e08f26565c33ce432eec7cfb090
+    path: layers/meta-yocto
+    layers:
+      meta-poky:
+
+  # ---------------------------------------------------------------------------
+  # meta-openembedded
+  # ---------------------------------------------------------------------------
+  meta-openembedded:
+    url: https://github.com/openembedded/meta-openembedded.git
+    refspec: 2b26d30fc7f478f5735d514f0c1bc28f6a4148b6
+    path: layers/meta-openembedded
+    layers:
+      meta-oe:
+      meta-python:
+      meta-filesystems:
+      meta-networking:
+      meta-multimedia:
+
+  # ---------------------------------------------------------------------------
+  # meta-qt5
+  # ---------------------------------------------------------------------------
+  meta-qt5:
+    url: https://github.com/meta-qt5/meta-qt5.git
+    refspec: 9ae2fe2696b10f5dc4253c4f467dc388139860bd
+    path: layers/meta-qt5
+
+  # ---------------------------------------------------------------------------
+  # meta-security
+  # ---------------------------------------------------------------------------
+  meta-security:
+    url: https://git.yoctoproject.org/meta-security
+    refspec: afbbe28cee4af2c6760aaead43a4a3ef29969809
+    path: layers/meta-security
+    layers:
+      meta-tpm:
+
+  # ---------------------------------------------------------------------------
+  # meta-freescale
+  # ---------------------------------------------------------------------------
+  meta-freescale:
+    url: https://github.com/Freescale/meta-freescale.git
+    refspec: 902dde8c5bd29bb507ac8d37772565a6c9ab77cd
+    path: layers/meta-freescale
+
+  # ---------------------------------------------------------------------------
+  # meta-freescale-3rdparty
+  # ---------------------------------------------------------------------------
+  meta-freescale-3rdparty:
+    url: https://github.com/Freescale/meta-freescale-3rdparty.git
+    refspec: 70c83e96c7f75e73245cb77f1b0cada9ed4bbc6d
+    path: layers/meta-freescale-3rdparty
+
+  # ---------------------------------------------------------------------------
+  # meta-freescale-distro
+  # ---------------------------------------------------------------------------
+  meta-freescale-distro:
+    url: https://github.com/Freescale/meta-freescale-distro.git
+    refspec: b9d6a5d9931922558046d230c1f5f4ef6ee72345
+    path: layers/meta-freescale-distro
+
+  # ---------------------------------------------------------------------------
+  # meta-freescale-3rdparty
+  # ---------------------------------------------------------------------------
+  meta-freescale-3rdparty:
+    url: https://github.com/Freescale/meta-freescale-3rdparty.git
+    refspec: 70c83e96c7f75e73245cb77f1b0cada9ed4bbc6d
+    path: layers/meta-freescale-3rdparty
+
+  # ---------------------------------------------------------------------------
+  # meta-arm
+  # ---------------------------------------------------------------------------
+  meta-freescale-distro:
+    url: https://git.yoctoproject.org/meta-arm
+    refspec: a81c19915b5b9e71ed394032e9a50fd06919e1cd
+    path: layers/meta-arm
+    layers:
+      meta-arm-toolchain:
+      meta-arm:
+
+  # ---------------------------------------------------------------------------
+  # meta-ti
+  # ---------------------------------------------------------------------------
+  meta-ti:
+    url: https://git.yoctoproject.org/meta-ti
+    refspec: ea8c0b1cf1ab8a0b327e3feb1144c1ccf05b8278
+    path: layers/meta-ti
+    layers:
+      meta-ti-bsp:
+      meta-ti-extras:
+
+  # ---------------------------------------------------------------------------
+  # meta-toradex-bsp-common  (git.toradex.com)
+  # ---------------------------------------------------------------------------
+  meta-toradex-bsp-common:
+    url: https://git.toradex.com/meta-toradex-bsp-common.git
+    refspec: 3fead3b1e2dcf83e086647b4f0e4185a94f12f11
+    path: layers/meta-toradex-bsp-common
+
+  # ---------------------------------------------------------------------------
+  # meta-toradex-nxp  (git.toradex.com)
+  # ---------------------------------------------------------------------------
+  meta-toradex-nxp:
+    url: https://git.toradex.com/meta-toradex-nxp.git
+    refspec: e43ed4b34727f351a63232013de205b27f09180f
+    path: layers/meta-toradex-nxp
+
+  # ---------------------------------------------------------------------------
+  # meta-toradex-distro  (git.toradex.com)
+  # ---------------------------------------------------------------------------
+  meta-toradex-distro:
+    url: https://git.toradex.com/meta-toradex-distro.git
+    refspec: 65a1511acecc37d9e9252c588bc57ac7944c92f5
+    path: layers/meta-toradex-distro
+
+  # ---------------------------------------------------------------------------
+  # meta-toradex-demos  (git.toradex.com)
+  # ---------------------------------------------------------------------------
+  meta-toradex-demos:
+    url: https://git.toradex.com/meta-toradex-demos.git
+    refspec: 4ba1cebc6909ee7a83d569e8cc748f69e6a0a24f
+    path: layers/meta-toradex-demos
+
+# -----------------------------------------------------------------------------
+# Cabecalho do bblayers.conf
+# -----------------------------------------------------------------------------
+bblayers_conf_header:
+  standard: |
+    POKY_BBLAYERS_CONF_VERSION = "2"
+
+# -----------------------------------------------------------------------------
+# Cabecalho do local.conf
+# -----------------------------------------------------------------------------
+local_conf_header:
+  standard: |
+    # EULA FSL
+    ACCEPT_FSL_EULA = "1"
+    
+    # DOWNLOAD DIR
+    DL_DIR ?= "${TOPDIR}/../../downloads"
+
+    # SSTTE DIR
+    SSTATE_DIR ?= "${TOPDIR}/../sstate-cache"
+    
+    # LIMIT THREADS AND PARALLEL TASKS
+    BB_NUMBER_THREADS = "8"
+    PARALLEL_MAKE = "-j 8"
+    PARALLEL_MAKEINST = "-j 8"
+
+    # TMUX TERMINAL
+    OE_TERMINAL = "tmux"
+
