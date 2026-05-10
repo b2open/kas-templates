@@ -29,7 +29,7 @@ kas build kas/tb2-colibri-imx8x-bsp7-minimal.yml -- -k
 
 Open shell:
 ```
-kas shell kas/tb2-colibri-imx8x-bsp7-minimal.yml.yml
+kas shell kas/tb2-colibri-imx8x-bsp7-minimal.yml
 ```
 
 Invoke bitbake manually:
