@@ -6,7 +6,7 @@ Configuration files for playing demos and training environments with Toradex Col
 ### Install kas
 
 ```
-pipx install kas
+pipx install kas==5.2.0
 ```
 
 
@@ -20,6 +20,11 @@ git clone -b scarthgap https://github.com/b2open/kas-templates.git kas
 
 ```
 kas build kas/tb2-colibri-imx8x-bsp7-minimal.yml
+```
+
+Build another image recipe, example: `tdx-reference-multimedia-image`:
+```
+kas build kas/tb2-colibri-imx8x-bsp7-minimal.yml --target tdx-reference-multimedia-image
 ```
 
 With `--keep`:
@@ -37,6 +42,17 @@ Invoke bitbake manually:
 kas shell kas/tb2-colibri-imx8x-bsp7-minimal.yml -c "bitbake minicom"
 ```
 
+Generate SDK:
+```
+kas shell kas/tb2-colibri-imx8x-bsp7-minimal.yml -c populate_sdk
+```
+
+Get environment (alternatives):
+```
+kas shell kas/tb2-colibri-imx8x-bsp7-minimal.yml -c "bitbake -e tdx-reference-minimal-image"
+
+kas shell kas/tb2-colibri-imx8x-bsp7-minimal.yml -- --environment
+```
 
 
 ## Templates
