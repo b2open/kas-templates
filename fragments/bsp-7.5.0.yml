@@ -89,17 +89,9 @@ repos:
     path: layers/meta-freescale-distro
 
   # ---------------------------------------------------------------------------
-  # meta-freescale-3rdparty
-  # ---------------------------------------------------------------------------
-  meta-freescale-3rdparty:
-    url: https://github.com/Freescale/meta-freescale-3rdparty.git
-    commit: 70c83e96c7f75e73245cb77f1b0cada9ed4bbc6d
-    path: layers/meta-freescale-3rdparty
-
-  # ---------------------------------------------------------------------------
   # meta-arm
   # ---------------------------------------------------------------------------
-  meta-freescale-distro:
+  meta-arm:
     url: https://git.yoctoproject.org/meta-arm
     commit: a81c19915b5b9e71ed394032e9a50fd06919e1cd
     path: layers/meta-arm
