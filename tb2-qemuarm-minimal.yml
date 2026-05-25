@@ -22,7 +22,10 @@ local_conf_header:
     CONF_VERSION = "2"
 
     # add rpm package management
-    PACKAGE_CLASSES = "package_rpm"
+    PACKAGE_CLASSES ?= "package_rpm"
+
+    # Extra image configurations
+    EXTRA_IMAGE_FEATURES ?= "debug-tweaks package-management"
 
     # wid support    
     IMAGE_FSTYPES = "wic"

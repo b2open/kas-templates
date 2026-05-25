@@ -27,6 +27,13 @@ repos:
 
 local_conf_header:
   local_conf_build: |
+
+    # Package Management
+    PACKAGE_CLASSES ?= "package_rpm"
+
+    # Extra image configurations
+    EXTRA_IMAGE_FEATURES ?= "debug-tweaks package-management"
+
     # Conserving Disk Space
     INHERIT += "rm_work"
     RM_WORK_EXCLUDE += "busybox virtual/kernel"
