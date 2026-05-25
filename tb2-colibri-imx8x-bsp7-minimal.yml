@@ -7,7 +7,7 @@
 #           -m tdxref/default.xml
 # =============================================================================
 
-# Build de producao - tdx-reference-minimal-image
+# Build - tdx-reference-minimal-image
 header:
   version: 14
   includes:
@@ -19,10 +19,15 @@ target:
   - tdx-reference-minimal-image
 
 repos:
-  # Layer de customizacao local
+  # Layer meta-b2open-treinamento
   meta-b2open-treinamento:
     url: https://github.com/b2open/meta-b2open-treinamento.git
     branch: scarthgap
     path: layers/meta-b2open-treinamento
 
+local_conf_header:
+  local_conf_build: |
+    # Conserving Disk Space
+    INHERIT += "rm_work"
+    RM_WORK_EXCLUDE += "busybox virtual/kernel"
 
